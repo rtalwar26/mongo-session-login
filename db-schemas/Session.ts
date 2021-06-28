@@ -52,4 +52,4 @@ sanitizeSchema(mySchema);
 
 export interface ISessionModel extends ISession, mongoose.Document {}
 
-export default mongoose.model<ISessionModel>("sessions", mySchema);
+export default mongoose.model<ISessionModel>("mongo_session_logins", mySchema);

@@ -25,4 +25,4 @@ let mySchema = new Schema({
     //when otp is being verified, pending_otp field needs to be set to null to mark the session as verified
 });
 mongo_sanitize_save_1.sanitizeSchema(mySchema);
-exports.default = mongoose.model("sessions", mySchema);
+exports.default = mongoose.model("mongo_session_logins", mySchema);
