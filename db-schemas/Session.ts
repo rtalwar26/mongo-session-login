@@ -37,36 +37,18 @@ export interface ISession {
   device?: SessionDevice;
 }
 let Schema = mongoose.Schema;
-let detailSchema = new Schema({
-  otp_secret: { type: String },
-  pow_secret: { type: String },
-  pow_salt: { type: String },
-  pow_hash_prefix: { type: String },
-  otp_done: { type: Boolean },
-});
-let deviceSchema = new Schema({
-  ip: { type: String },
-  location: { type: String },
-  hardware: { type: String },
-  os: { type: String },
-  app_version: { type: String },
-  redirect_link: { type: String },
-});
+
 let mySchema = new Schema({
   expiring: { type: Number, required: true },
   status: { type: String, required: true },
   value: { type: String, required: true },
   type: { type: String, required: true },
-  details: { type: detailSchema },
-  device: { type: deviceSchema },
+  details: { type: mongoose.SchemaTypes.Mixed },
+  device: { type: mongoose.SchemaTypes.Mixed },
   //when otp is being verified, pending_otp field needs to be set to null to mark the session as verified
 });
 
-sanitizeSchema(detailSchema);
-
 sanitizeSchema(mySchema);
-
-sanitizeSchema(deviceSchema);
 
 export interface ISessionModel extends ISession, mongoose.Document {}
 
