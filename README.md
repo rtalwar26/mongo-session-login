@@ -2,7 +2,7 @@
 
 An easy implementation of session based login, with support of custom login strategies. see example usage below
 
-## Usage
+### Usage
 
 ```shell
 npm install --save mongo-session-login
@@ -51,9 +51,33 @@ run_example().then(() => {});
 
 ```
 
-## LoginStrategy Interface
+### LoginStrategy Interface
 
 If you are implementing your own LoginStrategy , you have to implement a class which implements `LoginStrategy` interface as shown below. Also see sample (UserLoginStrategy.ts)[implementation/UserLoginStrategy.ts] class.
+
+```javascript
+interface LoginStrategy {
+  type: string;
+  initiate_first_factor(
+    user_id: string,
+    device?: SessionDevice
+  ): Promise<ISession>;
+  verify_first_factor(
+    session: ISessionModel,
+    payload: any,
+    device?: SessionDevice
+  ): Promise<AuthStepVerificationResult>;
+  generate_second_factor_OTP(session: ISessionModel): Promise<OTPData>;
+  verify_second_factor(
+    session: ISessionModel,
+    payload: any,
+    device?: SessionDevice
+  ): Promise<AuthStepVerificationResult>;
+  fetchUserId(sessionId: string): Promise<string>;
+}
+```
+
+### Example Implementation
 
 ```javascript
 import { LoginStrategy } from "mongo-session-login/LoginSessionConfig";
