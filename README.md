@@ -8,7 +8,7 @@ An easy implementation of session based login, with support of custom login stra
 npm install --save mongo-session-login
 ```
 
-> In this example we have created our custom login strategy under (implementation/UserLoginStrategy.ts)[implementation/UserLoginStrategy.ts]
+> In this example we have created our custom login strategy under [implementation/UserLoginStrategy.ts](implementation/UserLoginStrategy.ts)
 
 ```javascript
 import User from "mongo-session-login/implementation/User";
@@ -53,7 +53,7 @@ run_example().then(() => {});
 
 ### LoginStrategy Interface
 
-If you are implementing your own LoginStrategy , you have to implement a class which implements `LoginStrategy` interface as shown below. Also see sample (UserLoginStrategy.ts)[implementation/UserLoginStrategy.ts] class.
+If you are implementing your own LoginStrategy , you have to implement a class which implements `LoginStrategy` interface as shown below. Also see sample [UserLoginStrategy.ts](implementation/UserLoginStrategy.ts) class.
 
 ```javascript
 interface LoginStrategy {
