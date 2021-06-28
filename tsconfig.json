@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2018",
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "sourceMap": false,
+    "strict": true,
+    "baseUrl": ".",
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "lib": ["ES2018", "DOM"],
+    "paths": {},
+    "types": ["intern", "node"]
+  },
+  "exclude": []
+}

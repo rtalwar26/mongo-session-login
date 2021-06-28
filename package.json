@@ -1,0 +1,28 @@
+{
+  "name": "mongo-session-login",
+  "version": "1.0.0",
+  "description": "An easy implementation of session based login nodejs-mongo app. Also supports custom login strategies",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx intern"
+  },
+  "author": "Rajat Talwar",
+  "license": "ISC",
+  "dependencies": {
+    "intern": "^4.9.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment-timezone": "^0.5.33",
+    "mongo-sanitize-save": "^1.0.1",
+    "mongoose": "^5.12.15"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.2"
+  },
+  "keywords": [
+    "mongoose",
+    "session",
+    "jwt",
+    "login",
+    "authentication"
+  ]
+}
