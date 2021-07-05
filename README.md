@@ -2,6 +2,27 @@
 
 An easy implementation of session based login, with support of custom login strategies. see example usage below
 
+---
+
+### Steps to create JWT keys
+
+**Create an RSA key pair**
+
+```shell
+openssl genrsa  -out private.pem 2048
+openssl rsa -in private.pem -outform PEM -pubout -out public.pem
+
+```
+
+**Convert newly created keys into Base64 format**
+
+```shell
+openssl base64 -in private.pem -out private_base64.txt
+openssl base64 -in public.pem -out public_base64.txt
+```
+
+---
+
 ### Usage
 
 ```shell
@@ -53,7 +74,7 @@ run_example().then(() => {});
 
 ### LoginStrategy Interface
 
-If you are implementing your own LoginStrategy , you have to implement a class which implements `LoginStrategy` interface as shown below. Also see sample [UserLoginStrategy.ts](implementation/UserLoginStrategy.ts) class.
+If you are implementing your own LoginStrategy , you have to implement a class which implements `LoginStrategy` interface as shown below.
 
 ```javascript
 interface LoginStrategy {
@@ -78,6 +99,8 @@ interface LoginStrategy {
 ```
 
 ### Example Implementation
+
+An example showing a custom login strategy - [UserLoginStrategy.ts](implementation/UserLoginStrategy.ts) class.
 
 ```javascript
 import { LoginStrategy } from "mongo-session-login/LoginSessionConfig";
