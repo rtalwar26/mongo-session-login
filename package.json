@@ -1,6 +1,6 @@
 {
   "name": "mongo-session-login",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An easy implementation of session based login nodejs-mongo app. Also supports custom login strategies",
   "main": "index.js",
   "scripts": {
