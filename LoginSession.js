@@ -22,7 +22,7 @@ class LoginSession {
         assert.ok(this._id !== not_initiated_session_id, `Session not initiated, please call 'initiateForUserId'`);
         return this._id;
     }
-    static async removeExpiredSessions() {
+    static async remove_expired_sessions() {
         return Session_1.default.remove({ expiring: { $lt: Date.now() } });
     }
     set_session_id(id) {

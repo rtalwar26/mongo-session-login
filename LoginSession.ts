@@ -49,6 +49,7 @@ export default class LoginSession {
       this._jwt_private_key
     );
   }
+
   async verify_jwt_token(token: string): Promise<any | { session: string }> {
     JWTAdapter.verify(token, this._jwt_public_key);
   }
@@ -61,7 +62,7 @@ export default class LoginSession {
     return this._id;
   }
 
-  static async removeExpiredSessions(): Promise<any> {
+  static async remove_expired_sessions(): Promise<any> {
     return Session.remove({ expiring: { $lt: Date.now() } });
   }
 
